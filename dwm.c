@@ -207,12 +207,12 @@ static void setfocus(Client *c);
 static void setfullscreen(Client *c, int fullscreen);
 static void setgaps(int oh, int ov, int ih, int iv);
 static void incrgaps(const Arg *arg);
-static void incrigaps(const Arg *arg);
+/*static void incrigaps(const Arg *arg);
 static void incrogaps(const Arg *arg);
 static void incrohgaps(const Arg *arg);
 static void incrovgaps(const Arg *arg);
 static void incrihgaps(const Arg *arg);
-static void incrivgaps(const Arg *arg);
+static void incrivgaps(const Arg *arg);*/
 static void togglegaps(const Arg *arg);
 static void defaultgaps(const Arg *arg);
 static void setlayout(const Arg *arg);
@@ -1600,7 +1600,7 @@ incrgaps(const Arg *arg)
 		selmon->gappiv + arg->i
 	);
 }
-
+/*
 void
 incrigaps(const Arg *arg)
 {
@@ -1666,6 +1666,7 @@ incrivgaps(const Arg *arg)
 		selmon->gappiv + arg->i
 	);
 }
+*/
 
 void
 setlayout(const Arg *arg)

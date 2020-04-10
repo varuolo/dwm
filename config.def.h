@@ -33,7 +33,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Chromium",  NULL,       NULL,       1 << 1,       0,           -1 },
 };
 
 /* layout(s) */
@@ -97,13 +97,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_space,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_comma,  incrgaps,       {.i = -1 } },
+	{ MODKEY,                       XK_period, incrgaps,       {.i = +1 } },
+  { MODKEY,                       XK_Left,   focusmon,       {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_Left,   tagmon,         {.i = -1 } },
+  { MODKEY,                       XK_Right,  focusmon,       {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_Right,  tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
   { 0, XF86XK_AudioMute,        spawn,    SHCMD("amixer sset Master toggle ; pkill -RTMIN+10 dwmblocks") },
   { 0, XF86XK_AudioRaiseVolume, spawn,    SHCMD("amixer sset Master 5%+ ; pkill -RTMIN+10 dwmblocks") },
   { 0, XF86XK_AudioLowerVolume, spawn,    SHCMD("amixer sset Master 5%- ; pkill -RTMIN+10 dwmblocks") },
